@@ -17,19 +17,19 @@ const navigation = [
 
   {
     title: "Students",
-    href: "/ui/cards",
+    href: "/ui/students",
     icon: "bi bi-people",
   },
 
   {
     title: "Courses",
-    href: "/ui/cards",
+    href: "/ui/courses",
     icon: "bi bi-card-text",
   },
 
   {
     title: "Student Groups",
-    href: "/ui/cards",
+    href: "/ui/studentGroups",
     icon: "bi bi-people",
   },
 

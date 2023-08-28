@@ -198,7 +198,7 @@ const Home = () => {
     {
       cardTitle: 'Students',
       footerText: 'View',
-      href: "/ui/Patients",
+      href: "/ui/students",
       icon: cilGroup,
     },
 

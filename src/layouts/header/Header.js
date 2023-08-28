@@ -1,6 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {Input, Avatar, Space } from 'antd'
+import {SearchOutlined, UserOutlined, SettingOutlined  } from '@ant-design/icons'
+import {TiMessages} from 'react-icons/ti'
+import {MdNotificationsActive} from 'react-icons/md'
 import {
   Navbar,
   Collapse,
@@ -27,7 +31,7 @@ const Header = ({ showMobmenu }) => {
   };
 
   return (
-    <Navbar color="secondary" dark expand="md">
+    <Navbar color="info" dark expand="md">
       <div className="d-flex align-items-center">
         <NavbarBrand href="/" className="d-lg-none">
           <Image src={LogoWhite} alt="logo" />
@@ -52,47 +56,20 @@ const Header = ({ showMobmenu }) => {
       </div>
 
       <Collapse navbar isOpen={isOpen}>
-        <Nav className="me-auto" navbar>
-          <NavItem>
-            <Link href="/">
-              <a className="nav-link">Starter</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/about">
-              <a className="nav-link">About</a>
-            </Link>
-          </NavItem>
-
-          <NavItem>
-            <Link href="/about">
-              <a className="nav-link">About</a>
-            </Link>
-          </NavItem>
-          
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+        <Nav className=" w-full" navbar>
+      <Input  prefix={<SearchOutlined  />} placeholder="Search student, teacher, subjects etc" className="w-1/2" />
         </Nav>
+
+         <TiMessages size={26} color="white" />
+         <MdNotificationsActive size={26} color="white" className="mx-4"/>
+
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="secondary">
-            <div style={{ lineHeight: "0px" }}>
-              <Image
-                src={user1}
-                alt="profile"
-                className="rounded-circle"
-                width="30"
-                height="30"
-              />
-            </div>
+          <DropdownToggle color="transparent">
+
+            <Space size="middle">
+                <Avatar size={35} src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' alt='image' /> 
+            </Space>
+
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Info</DropdownItem>

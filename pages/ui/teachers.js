@@ -13,11 +13,13 @@ const Teachers = () => {
 
     const teachersList = TeachersData.map( teacher=>{
         return (
-    <div class="h-full w-full relative">
-      <img className='w-full h-full after:bg-black-500  after:absolute ' src={teacher.image}  alt=""/>
-        <div className="absolute bottom-0 px-4 py-1 text-white-300 w-full">
-         <h1 className="text-white font-semibold text-lg p-0 w-full m-0"> {teacher.name}</h1>
-         <p className="text-gray-200">Grade {teacher.grade}</p>
+    <div class="h-full w-full relative mb-10 pb-10">
+      {/* <div class="absolute inset-0 bg-black-500 opacity-50 w-full h-full"> */}
+      <img className='w-full h-full' src={teacher.image}  alt=""/>
+      {/* </div> */}
+        <div className="absolute bottom-0 px-2 py-1 text-white-300 w-full">
+         <h className="text-white font-semibold w-full"> {teacher.name}</h>
+         <h1 className="text-gray-200 font-bold text-xl">Grade {teacher.grade}</h1>
      </div>
      {teacher.subjects.map((subject)=>{
                   let color = subject.length > 7 ? 'geekblue' : 'green';
@@ -50,7 +52,7 @@ const Teachers = () => {
 
                <div>
                 <h className='font-semibold'>{teacher.name}</h>
-                <p class="text-gray-200 text-sm">Grade {teacher.grade}</p>
+                <h class="text-gray-200 text-sm">Grade {teacher.grade}</h>
 
                 {teacher.subjects.map((subject)=>{
                   return (
@@ -67,7 +69,7 @@ const Teachers = () => {
 
       const Events = UpcomingEvents.map((event) =>(
         <div>
-             <div className='w-full border rounded-md border-white-300 bg-blue-200 flex p-2 my-4 shadow-md '>
+             <div className='w-full border rounded-md border-white-300 bg-blue-200 flex p-2 mb-2 shadow-md '>
                <div className='w-fit m-2 text-blue-500'>
                 {event.img} 
                </div>
@@ -100,12 +102,12 @@ const Teachers = () => {
             Teachers
             </CardTitle>
             <CardBody className="">
-              <Container>
+              {/* <Container> */}
 
               <>
     <div className='w-full border flex'>
-    <div className='w-3/4 p-4'>
-     <div className='flex w-full justify-between mb-4'>
+    <div className='w-3/4 p-1'>
+     <div className='flex w-full justify-between mb-4 pr-4'>
       <h1 className='font-bold text-xl'>Teachers</h1>
       <div>
     <FilterFilled/>
@@ -190,28 +192,28 @@ const Teachers = () => {
           </Button>
       </div>
      </div>
-     <div className="w-full grid grid-cols-1 gap-10 md:grid-cols-4"> 
+     <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-4 pr-4"> 
         {teachersList}
      </div>
 
      <div className='my-10 flex flex-col w-full justify-start '>
       <h4 className='font-semibold my-2'>All Teachers</h4>
-      <div className="w-full grid grid-cols-1 gap-8 md:grid-cols-3"> 
+      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-3 pr-4"> 
       {AllTeachers}
      </div>
      </div>
      </div>
 
-     <div className='w-1/4 p-4'>
+     <div className='w-1/4 p-2 '>
     <div className='flex w-full justify-between '>
-      <div>
-         <p className='text-xs text-black-500'>Today: {today}</p>
-         <h5 className='font-bold'>{time}</h5>
+      <div className='flex flex-col'>
+         <h className='text-xs text-black-500'>Today: {today}</h>
+         <h className='font-bold'>{time}</h>
        </div>
 
-       <div>
-         <p className='text-xs text-black-500'>First break in:</p>
-         <h5 className='font-bold'>2:40:00</h5>
+       <div className='flex flex-col'>
+         <h className='text-xs text-black-500'>First break in:</h>
+         <h className='font-bold'>2:40:00</h>
        </div>
     </div>
 
@@ -244,7 +246,7 @@ const Teachers = () => {
      </div>
      </div>
     </>
-              </Container>
+              {/* </Container> */}
             </CardBody>
           </Card>
         </div>
